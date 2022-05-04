@@ -1,0 +1,48 @@
+{
+    "name": "nthmedia/configurable-headings",
+    "description": "Configure headings for Craft",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [],
+    "support": {
+        "docs": "https://github.com/nthmedia/configurable-headings",
+        "issues": "https://github.com/nthmedia/configurable-headings/issues"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "NTH media",
+            "homepage": "https://nthmedia.nl"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "craftcms/cms": "^3.0.0-alpha"
+    },
+    "autoload": {
+        "psr-4": {
+          "nthmedia\\configurableheadings\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Configure headings for Craft",
+        "handle": "configurable-headings",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://github.com/nthmedia/configurable-headings/CHANGELOG.md",
+        "class": "nthmedia\\configurableheadings\\ConfigurableHeadings"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    },
+    "require-dev": {
+        "craftcms/rector": "dev-main",
+        "phpstan/phpstan": "^1.6",
+        "craftcms/ecs": "dev-main"
+    }
+}

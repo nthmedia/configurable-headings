@@ -1,0 +1,21 @@
+.configurable-headings-form-container {
+    display: flex;
+    align-items: center;
+}
+
+.configurable-headings-form-container__heading {
+    flex-grow: 1;
+}
+
+.configurable-headings-form-container > div:not(:first-child) {
+    margin-left: 10px;
+}
+
+.overwrite-id-container {
+    display: none;
+    margin-top:5px;
+}
+
+.overwrite-id-container.active {
+    display: flex;
+}

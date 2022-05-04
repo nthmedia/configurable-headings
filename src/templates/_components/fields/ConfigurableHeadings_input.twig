@@ -1,0 +1,78 @@
+{% import "_includes/forms" as forms %}
+{% set suffix = random() %}
+
+<div class="configurable-headings-form-container">
+    <div class="configurable-headings-form-container__heading">
+        {{ forms.text({
+            id: 'heading',
+            name: name ~ '[heading]',
+            value: value.heading,
+            placeholder: 'Heading',
+        }) }}
+    </div>
+    <div>
+        {{ forms.select({
+            id: 'element',
+            name: name ~ '[element]',
+            value: value.element,
+            placeholder: 'Element',
+            options: [
+                {
+                    value: 'h1',
+                    label: 'h1',
+                },
+                {
+                    value: 'h2',
+                    label: 'h2',
+                },
+                {
+                    value: 'h3',
+                    label: 'h3',
+                },
+                {
+                    value: 'h4',
+                    label: 'h4',
+                },
+                {
+                    value: 'h5',
+                    label: 'h5',
+                },
+                {
+                    value: 'div',
+                    label: 'div',
+                }
+            ]
+        }) }}
+    </div>
+    <div>
+        {{ forms.checkbox({
+            id: 'enableId',
+            name: name ~ '[enableId]',
+            class: 'enable-id-' ~ suffix,
+            label: 'ID',
+            checked: value.enableId ? true : false
+        }) }}
+    </div>
+</div>
+
+<div class="configurable-headings-form-container overwrite-id-container overwrite-id-container-{{ suffix }} {% if value.enableId %}active{% endif %}" >
+    <label>Overwrite ID:</label>
+    <div style="flex-grow: 1; margin-left: 10px;">
+        {{ forms.text({
+            id: 'overwriteId',
+            name: name ~ '[overwriteId]',
+            value: value.overwriteId,
+            placeholder: 'Only fill this in when you want to overwrite to auto-generated ID'
+        }) }}
+    </div>
+</div>
+
+{% js %}
+    document.querySelector('.enable-id-{{ suffix }}').addEventListener('change', (e) => {
+        if (e.srcElement.checked) {
+            document.querySelector('.overwrite-id-container-{{ suffix }}').classList.add('active');
+        } else {
+            document.querySelector('.overwrite-id-container-{{ suffix }}').classList.remove('active');
+        }
+    });
+{% endjs %}
