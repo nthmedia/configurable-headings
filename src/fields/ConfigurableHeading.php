@@ -66,7 +66,7 @@ class ConfigurableHeading extends Field
      */
     public function getContentColumnType(): array|string
     {
-        return Schema::TYPE_STRING;
+        return Schema::TYPE_TEXT;
     }
 
     /**

@@ -2,7 +2,7 @@
     "name": "nthmedia/configurable-headings",
     "description": "Configure headings for Craft",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [],
     "support": {
         "docs": "https://github.com/nthmedia/configurable-headings",
@@ -11,7 +11,7 @@
     "license": "proprietary",
     "authors": [
         {
-            "name": "NTH media",
+            "name": "Niek ten Hoopen",
             "homepage": "https://nthmedia.nl"
         }
     ],
